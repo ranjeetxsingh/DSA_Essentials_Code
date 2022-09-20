@@ -19,6 +19,17 @@ void insertAtBottom(stack<int> &s, int data) {
 
 }
 
+void reverse(stack<int> &s) {
+	if (s.empty()) {
+		return;
+	}
+
+	int top = s.top();
+	s.pop();
+	reverse(s);
+	insertAtBottom(s, top);
+}
+
 int main() {
 
 #ifndef ONLINE_JUDGE
@@ -34,12 +45,17 @@ int main() {
 	s.push(4);
 	s.push(5);
 
-	insertAtBottom(s, 0);
+
+	// reversing stack
+	cout << "reversed stack: " << endl;
+
+	reverse(s);
 
 	while (!s.empty()) {
 		cout << s.top() << endl;
 		s.pop();
 	}
+
 
 
 	return 0;
