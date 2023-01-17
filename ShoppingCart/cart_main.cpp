@@ -89,13 +89,16 @@ int main() {
 			cout << cart.viewCart();
 			cout << "---------------" << endl;
 		}
-		else {
+		else if (action == 'c') {
 			//checkout
 			cart.viewCart();
 			if (checkout(cart)) {
 				break;
 			}
 
+		}
+		else {
+			cout << "Please choose valid action!" << endl;
 		}
 	}
 
